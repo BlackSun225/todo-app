@@ -1,0 +1,255 @@
+:root {
+  --mainBack: hsl(235, 21%, 11%);
+  --listBack: hsl(235, 24%, 19%);
+  --gray: hsl(233, 14%, 35%);
+  --bordergray: hsl(237, 14%, 26%);
+  --infosgray: hsl(234, 11%, 52%);
+  --paragraph: hsl(236, 33%, 92%);
+  --brightBlue: hsl(220, 98%, 61%);
+  --defColor: white;
+  --gradient: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+body {
+  font-size: 18px;
+}
+main {
+  background-position: center top;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+header, section, footer {
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1.5rem;
+}
+h1 {
+  color: white;
+  letter-spacing: 0.7rem;
+  font-size: 2rem;
+  padding-top: 0.6rem;
+}
+header img {
+  width: 1.5rem;
+  cursor: pointer;
+}
+#moon {
+  display: none;
+}
+label {
+  width: 100%;
+  position: relative;
+  background: var(--listBack);
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.bcircle, .lbcircle {
+  background: var(--gradient);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 1rem;
+  z-index: 1;
+}
+.circle, .lcircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--listBack);
+  border: 1px solid var(--gray);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+input {
+  border: none;
+  outline: none;
+  caret-color: var(--brightBlue);
+}
+input , p {
+  width: calc(100% - 3.3rem);
+  background: transparent;
+  font-weight: 400;
+  color: var(--paragraph);
+  padding-top: 0.2rem;
+}
+::placeholder {
+  color: var(--infosgray);
+}
+::-moz-placeholder {
+  color: var(--infosgray);
+}
+#add {
+  color: var(--brightBlue);
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#list {
+  border-radius: 4px;
+}
+#list section {
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+.todo {
+  background: var(--listBack);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.todo img {
+  width: 1rem;
+  display: none;
+}
+.todo {
+  border-bottom: 1px solid var(--bordergray); 
+}
+.todo .bcircle, .todo p, .todo img, #infos button{
+  cursor: pointer;
+}
+.active p {
+  text-decoration: none;
+  color: var(--paragraph);
+}
+.completed .bcircle::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.2rem;
+  border-width: 0 0 2px 2px;
+  border-color: white;
+  border-style: solid;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.2rem;
+  margin-top: -0.2rem;
+  transform: rotate(-45deg);
+}
+.completed .circle {
+  display: none;
+}
+.completed p {
+  text-decoration:line-through;
+  color: var(--bordergray);
+}
+#infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--listBack);
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--infosgray);
+  position: relative;
+  border-radius: 0 0 4px 4px;
+}
+#state {
+  display: flex;
+  align-items: center;
+}
+#all ,#active, #completed {
+  font-weight: 700;
+}
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--infosgray);
+}
+button:hover {
+  color: var(--defColor);
+}
+button.selected:hover {
+  color: var(--brightBlue);
+}
+.selected {
+  color:hsl(220, 98%, 61%);
+}
+.exp {
+  height: 3rem;
+}
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--infosgray);
+}
+
+@media only screen and (min-width:750px) {
+  main {
+    background: var(--mainBack) url("images/bg-desktop-dark.jpg") no-repeat;
+    background-size: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  header, section, footer {
+    width: 700px;
+  }
+  input, p {
+    font-size: 1rem;
+  }
+  #list {
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
+  }
+  #state {
+    width: 25%;
+    justify-content: space-between;
+  }
+  footer {
+    margin-top: 2.5rem;
+  }
+}
+
+@media only screen and (max-width:749px) {
+  main {
+    background: var(--mainBack) url("images/bg-mobile-dark.jpg") no-repeat;
+    background-size: 100% 13rem;
+  }
+  header, section, footer {
+    width: calc(100% - 3rem);
+  }
+  input, p {
+    font-size: 0.85rem;
+  }
+  #list {
+    margin-bottom: 6.5rem;
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.1);
+  }
+  #list section {
+    width: 100%;
+  }
+  #state {
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    border-radius: 4px;
+    background: var(--listBack);
+    padding: 1rem;
+    left: 0;
+    top: calc(100% + 1rem);
+  }
+  #state button:nth-child(2) {
+    margin: 0 1rem;
+  }
+  footer {
+    margin: 2rem auto;
+  }
+}

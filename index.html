@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-CI">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo App</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/f31faae043.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>TODO</h1>
+        <div>
+          <img id="sun" alt="" src="images/icon-sun.svg" />
+          <img id="moon" alt="" src="images/icon-moon.svg"/>
+        </div>
+      </header>
+      <section>
+        <label for="addTodo">
+          <div class="lbcircle">
+            <div class="lcircle"></div>
+          </div>
+          <input type="text" id="ntodo" placeholder="Create a new todo..."/>
+          <i id="add" class="fa-solid fa-plus"></i>
+        </label>
+        <div id="list">
+          <section id="todobox">
+            <div class="todo completed">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>Complete online JavaScript</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+            <div class="todo active">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>Jog around the park 3x</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+            <div class="todo active">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>10 minutes meditation</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+            <div class="todo active">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>Read for 1 hour</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+            <div class="todo active">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>Pick up groceries</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+            <div class="todo active">
+              <div class="bcircle">
+                <div class="circle"></div>
+              </div>
+              <p>Complete Todo App on Frontend Mentor</p>
+              <img class="close" alt="" src="images/icon-cross.svg" />
+            </div>
+          </section>
+          <div id="infos">
+            <span id="items">5 items left</span>
+            <div id="state">
+              <button id="all" class="selected">All</button>
+              <button id="active">Active</button>
+              <button id="completed">Completed</button>
+            </div>
+            <button id="clear">Clear Completed</button>
+          </div>
+        </div>
+      </section>
+      <footer>Drag and drop to reorder list</footer>
+    </main>
+    <script src="todo.js"></script>
+  </body>
+</html>
